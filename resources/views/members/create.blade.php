@@ -14,6 +14,10 @@ use App\Common;
 			'class' => 'form-horizontal'
 		])!!}
 
+		<div class="text-center" style="padding-bottom: 10px">
+			<h2>Create New Member</h2>
+		</div>
+
 			<!-- Membership no. -->
 		<div class="form-group row">
 			{!! Form::label('member-membership_no', 'Membership No.', [
@@ -77,7 +81,7 @@ use App\Common;
 				{!! Form::label('member-gender', 'Female', [
 					'class' => 'control-label'
 				]) !!}
-				{!! Form::radio('gender', 'g', [
+				{!! Form::radio('gender', 'f', [
 					'id'		=> 'member-gender',
 					'class'		=> 'form-control'
 				]) !!}
@@ -112,6 +116,78 @@ use App\Common;
 				]) !!}
 			</div>
 		</div>
+
+		<!-- City -->
+		<div class="form-group row">
+			{!! Form::label('member-city', 'City', [
+				'class' => 'control-label col-sm-3',
+			]) !!}
+
+			<div class="col-sm-9">
+				{!! Form::text('city', null, [
+					'id'		=> 'member-city',
+					'class'		=> 'form-control',
+					'maxlength'	=> 50,
+				]) !!}
+			</div>
+		</div>
+
+		<!-- State -->
+		<div class="form-group row">
+			{!! Form::label('member-state', 'State', [
+				'class' => 'control-label col-sm-3',
+			]) !!}
+
+			<div class="col-sm-9">
+				{!! Form::select('state', Common::$states, null, [
+					'class'			=> 	'form-control',
+					'placeholder'	=>	'- Select State -',		
+				]) !!}
+			</div>
+		</div>
+
+		<!-- Phone -->
+		<div class="form-group row">
+			{!! Form::label('member-phone', 'Phone No.', [
+				'class' => 'control-label col-sm-3'
+			]) !!}
+
+			<div class="col-sm-9">
+				{!! Form::text('phone', null, [
+					'id'		=> 	'member-phone',
+					'class'		=>	'form-control',
+					'maxlength'	=> 	20,
+				]) !!}
+			</div>
+		</div>
+
+		<!-- Division ID -->
+		<div class="form-group row">
+			{!! Form::label('member-division', 'Division', [
+				'class'	=> 'control-label col-sm-3'
+			]) !!}
+
+			<div class="col-sm-9">
+
+				{!! Form::select('division_id', $divisions, null, [
+					'class'			=>	'form-control',
+					'placeholder'	=>	'- Select Division -'
+				]) !!}
+
+			</div>
+		</div>
+
+
+		<!-- Submit Button -->
+		<div class="form-group row text-center">
+			<div class="col-sm-offset-3 col-sm-6">
+				{!! Form::button('Save', [
+					'type'	=> 'submit',
+					'class'	=> 'btn btn-primary',
+				]) !!}
+			</div>
+		</div>
+
 	</div>
 
 

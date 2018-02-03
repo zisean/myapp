@@ -8,12 +8,16 @@ use App\Common;
 
 @section('content')
 
-	<div class="panel-body">
+	<div class="container">
 	    {!! Form::model($division,[
 	        'route' => ['division.store'],
 	        'class' => 'form-horizontal'
 
 	    ]) !!}
+
+	    <div class="text-center" style="padding-bottom: 10px">
+			<h2>Create New Division</h2>
+		</div>
 
 		<!-- Code -->
 		<div class="form-group row">
@@ -98,7 +102,7 @@ use App\Common;
 		</div>
 
 		<!-- SUbmit Button -->
-		<div class="form-group row">
+		<div class="form-group row text-center">
 			<div class="col-sm-offset-3 col-sm-6">
 				{!!Form::button('Save', [
 					'type' 	=> 'submit',
