@@ -21,6 +21,11 @@ class Common{
 		'10' => 'Selangor',
 		'11' => 'Terengganu',
 	];
+
+	public static $gender = [
+		'm' => 'Male',
+		'f' => 'Female',
+	];
 }
 
 

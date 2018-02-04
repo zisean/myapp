@@ -12,7 +12,9 @@ class MemberController extends Controller
     //
     public function index() {
 
-    	return view('members.index',[]);
+        $members = Member::orderBy('name', 'asc')->get(); 
+
+    	return view('members.index',['members' => $members]);
     }
 
     public function create() {
@@ -30,6 +32,15 @@ class MemberController extends Controller
     	$member->save();
 
     	return redirect()->route('member.index');
+    }
+
+    public function edit($id) {
+        $member = Member::find($id);
+
+        if(!$member) throw new ModelNotFoundException;
+
+        return view('members.edit', ['member' => $member]);
+        
     }
 
 

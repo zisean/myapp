@@ -34,3 +34,5 @@ Route::get('/member', 'MemberController@index')->name('member.index');
 Route::get('/member/create', 'MemberController@create')->name('division.create');
 
 Route::post('/member/store', 'MemberController@store')->name('member.store');
+
+Route::get('/memeber/update/{id}', 'MemberController@edit')->name('member.edit');
