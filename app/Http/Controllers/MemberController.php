@@ -36,10 +36,24 @@ class MemberController extends Controller
 
     public function edit($id) {
         $member = Member::find($id);
+        $divisions = Division::pluck('name', 'id');
 
         if(!$member) throw new ModelNotFoundException;
 
-        return view('members.edit', ['member' => $member]);
+        return view('members.edit', ['member' => $member, 'divisions' => $divisions]);
+        
+    }
+
+    public function update(Request $request, $id){
+        $member = Member::find($id);
+
+        if (!$member) throw new ModelNotFoundException;
+
+        $member->fill($request->all());
+
+        $member->save();
+
+        return redirect()->route('member.index');
         
     }
 

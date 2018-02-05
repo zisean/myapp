@@ -11,6 +11,7 @@ use App\Common;
 
 		<table class="table table-striped task-table">
 			<thead>
+				<th>No.</th>
 				<th>Membership No.</th>
 				<th>NRIC</th>
 				<th>Name</th>
@@ -27,9 +28,10 @@ use App\Common;
 			<tbody>
 				@foreach ($members as $i => $member)
 				<tr class="table-text">
-					<td>{{ $i+1					}}</td>
-					<td>{{ $member->nric 		}}</td>
-					<td>{{ $member->name 		}}</td>
+					<td>{{ $i+1					 	}}</td>
+					<td>{{ $member->membership_no	}}</td>
+					<td>{{ $member->nric 			}}</td>
+					<td>{{ $member->name 			}}</td>
 
 					<td>{{ Common::$gender[$member->gender]	}}</td>
 

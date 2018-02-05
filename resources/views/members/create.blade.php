@@ -187,7 +187,7 @@ use App\Common;
 				]) !!}
 			</div>
 		</div>
-
+		{!! Form::close() !!}
 	</div>
 
 
