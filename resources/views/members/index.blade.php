@@ -29,7 +29,12 @@ use App\Common;
 				@foreach ($members as $i => $member)
 				<tr class="table-text">
 					<td>{{ $i+1					 	}}</td>
-					<td>{{ $member->membership_no	}}</td>
+					<td>{!! link_to_route(
+							'member.show',
+							$title =  $member->membership_no, $parameters = [
+								'id' => $member->id,
+							]
+						)!!}</td>
 					<td>{{ $member->nric 			}}</td>
 					<td>{{ $member->name 			}}</td>
 

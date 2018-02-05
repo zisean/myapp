@@ -57,5 +57,13 @@ class MemberController extends Controller
         
     }
 
+    public function show($id) {
+        $member = Member::find($id);
+
+        if(!$member) throw new ModelNotFoundException;
+
+        return view('members.show', ['member' => $member]);
+        
+    }
 
 }
