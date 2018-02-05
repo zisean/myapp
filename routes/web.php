@@ -40,3 +40,6 @@ Route::get('/memeber/update/{id}', 'MemberController@edit')->name('member.edit')
 Route::post('/member/update/{id}', 'MemberController@update')->name('member.update');
 
 Route::get('/member/show/{id}', 'MemberController@show')->name('member.show');
+
+//Routes for Group\
+Route::resource('/group', 'GroupController');

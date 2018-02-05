@@ -9,6 +9,7 @@ use App\Common;
 	<div class="container">
 		{!! Form::model($member, [
 			'route' => ['member.update', $member->id],
+			'method'=> 'put',
 			'class' => 'form-horizontal'
 		]) !!}
 

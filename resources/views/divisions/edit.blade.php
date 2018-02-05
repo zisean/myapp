@@ -11,6 +11,7 @@ use App\Common;
 	<div class="container">
 		{!!Form::model($division, [
 			'route' => ['division.update', $division->id],
+			'method'=> 'put',
 			'class' => 'form-horizontal'
 		]) !!}
 

@@ -11,6 +11,7 @@ use App\Common;
 	<div class="container">
 		{!! Form::model($member,[
 			'route' => ['member.store'],
+			'method'=> 'post',
 			'class' => 'form-horizontal'
 		])!!}
 
