@@ -35,7 +35,7 @@ Route::get('/member/create', 'MemberController@create')->name('division.create')
 
 Route::post('/member/store', 'MemberController@store')->name('member.store');
 
-Route::get('/memeber/update/{id}', 'MemberController@edit')->name('member.edit');
+Route::get('/memeber/edit/{id}', 'MemberController@edit')->name('member.edit');
 
 Route::post('/member/update/{id}', 'MemberController@update')->name('member.update');
 
@@ -43,3 +43,7 @@ Route::get('/member/show/{id}', 'MemberController@show')->name('member.show');
 
 //Routes for Group\
 Route::resource('/group', 'GroupController');
+
+Route::post('/group/addmember/{id}', 'GroupController@addmember')->name('group.addmember');
+
+Route::get('group/showMember/{id}','GroupController@showMember')->name('group.showMember');

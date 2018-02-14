@@ -22,8 +22,12 @@ class Member extends Model
         'division_id',
     ];
 
-    public function division(){
+    public function division() {
         return $this->belongsTo(Division::class);
+    }
+
+    public function groups() {
+        return $this->belongsToMany(Group::class);
     }
 
 }
