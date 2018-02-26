@@ -37,9 +37,9 @@ class GroupController extends Controller
 
         $selectedMember = $request->input('member_id');
 
-        // foreach ($selectedMember as $key => $value) {
-        //     $group->members()->attach($value);
-        // }
+        foreach ($selectedMember as $key => $value) { 
+            $group->members()->attach($value);
+        }
 
         print($group->members()->pluck('id'));
     }
@@ -52,12 +52,9 @@ class GroupController extends Controller
         if(!$group) throw new ModelNotFoundException;
 
         foreach ($members as $key => $member){
-            if($member['id'] === $group->members()->pluck('id')){
-                $checked = true;
-            }else{
-                $checked = false;
-            }
         }
+
+
 
         return view('groups.showMember', ['group' => $group, 'members' => $members]);
     }

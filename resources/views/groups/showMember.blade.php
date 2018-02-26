@@ -29,7 +29,7 @@
 						<td>{{ $member->name }}</td>
 
 						<td>
-							{!! Form::checkbox('member_id[]', $member->id, $checked) !!}
+							{!! Form::checkbox('member_id[]', $member->id) !!}
 						</td>
 					</tr>
 					@endforeach

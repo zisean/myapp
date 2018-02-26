@@ -14,6 +14,7 @@
 				<th>Code</th>
 				<th>Name</th>
 				<th>Description</th>
+				<th>Actions</th>
 			</thead>
 
 			<tbody>
@@ -29,6 +30,7 @@
 							$title = "Edit Group",
 							$parameter = ['id' => $group->id]
 						) !!}
+						|
 						{!! link_to_route(
 							'group.showMember',
 							$title = "Add Member",
