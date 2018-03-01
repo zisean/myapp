@@ -21,7 +21,9 @@
 				@foreach ($groups as $i => $group)
 				<tr>
 					<td>{{ $i+1 }}</td>
-					<td>{{ $group->code }}</td>
+					<td>{!! link_to_route('group.show',
+						$title = $group->code,
+						$parameters = ['id' => $group->id] )!!}</td>
 					<td>{{ $group->name }}</td>
 					<td>{{ $group->description }}</td>
 					<td>

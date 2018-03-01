@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Support\Facades\Input;
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -27,9 +31,8 @@
 					<tr>
 						<td>{{ $member->membership_no }}</td>
 						<td>{{ $member->name }}</td>
-
 						<td>
-							{!! Form::checkbox('member_id[]', $member->id) !!}
+							{!! Form::checkbox('member_id[]', $member->id, in_array($member->id, $existsMembers)) !!}
 						</td>
 					</tr>
 					@endforeach

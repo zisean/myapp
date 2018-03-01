@@ -13,15 +13,8 @@ use App\Common;
 			<thead>
 				<th>No.</th>
 				<th>Membership No.</th>
-				<th>NRIC</th>
 				<th>Name</th>
-				<th>Gender</th>
 				<th>Address</th>
-				<th>Postcode</th>
-				<th>City</th>
-				<th>State</th>
-				<th>Phone</th>
-				<th>Division</th>
 				<th>Actions</th>
 			</thead>
 
@@ -35,24 +28,18 @@ use App\Common;
 								'id' => $member->id,
 							]
 						)!!}</td>
-					<td>{{ $member->nric 			}}</td>
 					<td>{{ $member->name 			}}</td>
-
-					<td>{{ Common::$gender[$member->gender]	}}</td>
-
 					<td>{{ $member->address 	}}</td>
-					<td>{{ $member->postcode 	}}</td>
-					<td>{{ $member->city 		}}</td>
-
-					<td>{{ Common::$states[$member->state]	}}</td>
-
-					<td>{{ $member->phone 			}}</td>
-					<td>{{ $member->division->name	}}</td>
-					
 					<td>
 						{!! link_to_route(
 							'member.edit',
 							$title = "Edit",
+							$parameters = ['id' => $member->id]
+						) !!}
+						|
+						{!! link_to_route(
+							'member.edit',
+							$title = "Join Group",
 							$parameters = ['id' => $member->id]
 						) !!}
 					</td>
