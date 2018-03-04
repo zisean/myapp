@@ -60,6 +60,23 @@ use App\Common;
 					</td>
 				</tr>
 
+				<tr>
+					<td>Joined Group
+					({!! link_to_route(
+							'member.showGroup',
+							$title = "Join Group",
+							$parameters = ['id' => $member->id]
+						) !!})</td>
+					@if (count($member->groups) > 0)
+					<td>
+					@foreach ($member->groups as $group)
+						<p>{{ $group->name }}</p>	
+					@endforeach
+					</td>
+					@else
+					<td>No Group Found</td>
+					@endif
+				</tr>
 			</tbody>
 		</table>
 	</div>

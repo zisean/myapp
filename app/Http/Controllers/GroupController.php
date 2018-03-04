@@ -42,7 +42,7 @@ class GroupController extends Controller
     }
 
     public function showMember($id) {
-        $checked = false;
+        
         $group = Group::find($id);
         $members = Member::orderBy('name','asc')->get();
 

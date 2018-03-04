@@ -12,10 +12,6 @@
 			<h3>Group Name: {{$group->name}}</h3>
 		</div>
 		<div class="form-group row">
-			<div class="col-sm-9">
-			</div>
-		</div>
-		<div class="form-group">
 			<table class="table table-striped task-table">
 				<thead>
 					<th>Membership_no</th>

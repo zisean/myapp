@@ -38,7 +38,7 @@ use App\Common;
 						) !!}
 						|
 						{!! link_to_route(
-							'member.edit',
+							'member.showGroup',
 							$title = "Join Group",
 							$parameters = ['id' => $member->id]
 						) !!}

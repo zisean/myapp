@@ -25,7 +25,12 @@
 					<td>{{ $group->description }}</td>
 				</tr>
 				<tr>
-					<td>Members</td>
+					<td><p>Members</p>
+						<p>					({!! link_to_route(
+						'group.showMember',
+						$title = "Add Member",
+						$parameter = ['id' => $group->id]
+					) !!})</p></td>
 					@if (count($group->members) > 0)
 					<td>
 					@foreach ($group->members as $member)

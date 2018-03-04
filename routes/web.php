@@ -41,6 +41,10 @@ Route::post('/member/update/{id}', 'MemberController@update')->name('member.upda
 
 Route::get('/member/show/{id}', 'MemberController@show')->name('member.show');
 
+Route::get('/member/showGroup/{id}', 'MemberController@showGroup')->name('member.showGroup');
+
+Route::post('/member/joinGroup/{id}', 'MemberController@joinGroup')->name('member.joinGroup');
+
 //Routes for Group\
 Route::resource('/group', 'GroupController');
 
