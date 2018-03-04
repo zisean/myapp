@@ -34,12 +34,11 @@ class GroupController extends Controller
 
     public function addmember($id, Request $request) {
         $group = Group::find($id);
-        $groups = Group::orderBy('name', 'asc')->get();
         $selectedMember = $request->input('member_id');
         
         $group->members()->sync($selectedMember);
 
-        return view('groups.index', ['groups' => $groups]);
+        return redirect()->route('group.index');
     }
 
     public function showMember($id) {
@@ -92,7 +91,11 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        //
+        $group = Group::find($id);
+
+        if(!$group) throw new ModelNotFoundException;
+
+        return view('groups.edit',['group' => $group]);
     }
 
     /**
@@ -104,7 +107,14 @@ class GroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $group = Group::find($id);
+
+        if(!$group) throw new ModelNotFoundException;
+
+        $group->fill($request->all());
+        $group->save();
+
+        return redirect()->route('group.index');
     }
 
     /**
