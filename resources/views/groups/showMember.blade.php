@@ -1,7 +1,3 @@
-<?php
-use Illuminate\Support\Facades\Input;
-?>
-
 @extends('layouts.app')
 
 @section('content')

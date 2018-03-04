@@ -33,7 +33,7 @@
 					@endforeach
 					</td>
 					@else
-					<td>No Member was found.</td>
+					<td>No Member found.</td>
 					@endif
 				</tr>
 

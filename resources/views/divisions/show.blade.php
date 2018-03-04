@@ -44,6 +44,17 @@ use App\Common;
 					<td>Created</td>
 					<td>{{ $division->created_at }}</td>
 				</tr>
+				<tr></tr>
+				<td>Members</td>
+				@if (count($division->members) > 0)
+				<td>
+				@foreach ($division->members as $member)
+				<p>{{ $member->name }}</p>
+				@endforeach	
+				</td>
+				@else
+				<td>No Member found</td>
+				@endif
 			</tbody>
 		</table>
 	</div>
