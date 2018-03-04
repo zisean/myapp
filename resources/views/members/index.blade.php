@@ -49,6 +49,7 @@ use App\Common;
 			</tbody>
 		</table>
 		@endif 
+		{{ $members->links() }}
 	</div>
 
 

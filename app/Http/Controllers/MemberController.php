@@ -13,8 +13,10 @@ class MemberController extends Controller
     //
     public function index() {
 
+
         $members = Member::orderBy('name', 'asc')->get(); 
 
+        $members = Member::simplePaginate(10);
     	return view('members.index',['members' => $members]);
     }
 
